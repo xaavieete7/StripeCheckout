@@ -1,0 +1,567 @@
+html {
+    font-size: 16px;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-family: Roboto,sans-serif;
+    background: #fafafa;
+    color: rgba(0,0,0,.87);
+}
+
+* {
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+}
+
+button, input, select, textarea {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+}
+
+button, input, optgroup, select, textarea {
+    font: inherit;
+}
+
+input {
+    border-radius: 0;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.d-none {
+    display: none;
+}
+
+.btn-container {
+    margin-top: 35px;
+    text-align: right;
+}
+
+.btn {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    min-width: 50%;
+    text-transform: uppercase;
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: .0892857143em;
+    border-radius: 5px;
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-stripe {
+    padding: 15px;
+    background-color: #0570DE;
+    color: white;
+    width: 100%;
+    margin-top: 25px;
+    font-weight: 800;
+    border-radius: 5px;
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.application-warp {
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
+    position: relative;
+}
+
+.application .body-2, .line-items .body-2, .shipment-summary .body-2 {
+    font-size: .875rem!important;
+    font-weight: 400;
+    letter-spacing: .0178571429em!important;
+    line-height: 1.25rem;
+}
+
+.application .primary {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+.px-2 {
+    padding-right: 8px!important;
+    padding-left: 8px!important;
+}
+
+.py-1 {
+    padding-top: 4px!important;
+    padding-bottom: 4px!important;
+}
+
+.content {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    max-width: 100%;
+}
+
+.wrap-container {
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    max-width: 100%;
+    position: relative;
+}
+
+.container {
+    width: auto;
+    padding: 12px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.layout {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    min-width: 0;
+}
+
+.row {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    margin-right: -12px;
+    margin-left: -12px;
+}
+
+.layout.wrap {
+    flex-wrap: wrap;
+}
+
+.flex {
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    max-width: 100%;
+}
+
+.stepper {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.stepper__step {
+    padding: 24px 24px 16px;
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    position: relative;
+}
+
+.stepper__step:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.stepper__step__step {
+    background-color: black;
+    color: #fff;
+    margin-right: 12px;
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    font-size: 12px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 24px;
+    min-width: 24px;
+    width: 24px;
+}
+
+.stepper__label {
+    -webkit-box-align: start;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    line-height: 1;
+    text-align: left;
+    color: rgba(0,0,0,.38);
+    text-shadow: 0 0 0 #000;
+}
+
+.stepper__label small {
+    color: rgba(0,0,0,.54);
+    font-size: 12px;
+    font-weight: 300;
+    text-shadow: none;
+}
+
+.step-wrapper:not(:last-child)>.stepper__content {
+    border-left: 1px solid rgba(0,0,0,.12);
+}
+
+.stepper__content {
+    margin: 0 -36px -16px 36px;
+    padding: 16px 60px 16px 23px;
+    width: auto;
+    top: 0;
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+}
+
+.stepper__content .stepper__wrapper {
+    overflow: hidden;
+    height: auto;
+}
+
+.step-wrapper .stepper__label small {
+    margin-top: 0.5rem;
+}
+
+/* Step 1 */
+
+.input {
+    -webkit-box-align: start;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    font-size: 16px;
+    letter-spacing: normal;
+    text-align: left;
+}
+
+.input__control {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    height: auto;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.text-field>.input__control>.input__slot {
+    cursor: text;
+}
+
+.input__slot {
+    -webkit-box-align: center;
+    align-items: center;
+    color: inherit;
+    display: -webkit-box;
+    display: flex;
+    margin-bottom: 8px;
+    min-height: inherit;
+    position: relative;
+    width: 100%;
+}
+
+.text-field__slot {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    position: relative;
+    flex-direction: column;
+}
+
+.input .label {
+    height: 20px;
+    line-height: 20px;
+    color: rgba(0,0,0,.54);
+    right: auto;
+}
+
+.label {
+    font-size: 13px;
+    line-height: 1;
+    min-height: 8px;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.text-field input[type=text] {
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    line-height: 20px;
+    padding: 8px 15px 8px;
+    max-width: 100%;
+    max-height: 32px;
+    border: 1px solid rgba(0,0,0,0.24);
+    border-radius: 5px;
+}
+
+input.error {
+    border-color: red;
+}
+
+/* Step 2 */
+.shipment-summary {
+    margin-bottom: 2rem;
+}
+
+.shipment-header {
+    font-weight: bolder;
+    margin-bottom: 0.5rem;
+}
+
+.divider {
+    display: block;
+    -webkit-box-flex: 1;
+    flex: 1 1 0;
+    max-width: 100%;
+    height: 0;
+    max-height: 0;
+    border: 0 solid rgba(0, 0, 0, .12);
+    border-top-width: thin;
+}
+
+.shrink {
+    -webkit-box-flex: 0!important;
+    flex-grow: 0!important;
+    flex-shrink: 1!important;
+}
+
+.grow {
+    flex-shrink: 0!important;
+}
+
+.shipment-company div {
+    margin-top: 8px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    font-size: .875rem!important;
+    font-weight: 400;
+    letter-spacing: .0178571429em!important;
+    line-height: 1.25rem;
+}
+
+.input-container .flex.width-input {
+    flex-basis: 47%;
+}
+
+.input-container .flex.width-input-30 {
+    flex-basis: 30.6%;
+}
+
+.stripe__error {
+    color: #a94442;
+    background-color: #f2dede;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+}
+
+@media (min-width: 960px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .flex.order-md1 {
+        -webkit-box-ordinal-group: 2;
+        order: 1;
+    }
+}
+
+@media (min-width: 1264px) {
+    .container {
+        max-width: 1264px;
+    }
+
+}
+
+@media (max-width: 1264px) {
+
+    .input-container .flex.width-input {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+}
+
+@media (min-width: 1904px) {
+    .container {
+        max-width: 1904px;
+    }
+}
+
+@media (min-width: 0) {
+    .flex.order-xs2 {
+        -webkit-box-ordinal-group: 3;
+        order: 2;
+    }
+
+    .flex.xs12 {
+        flex-basis: 100%;
+        -webkit-box-flex: 0;
+        flex-grow: 0;
+        max-width: 100%;
+    }
+
+    .flex.xs3 {
+        flex-basis: 25%;
+        -webkit-box-flex: 0;
+        flex-grow: 0;
+        max-width: 25%;
+    }
+
+    .flex.xs6 {
+        flex-basis: 50%;
+        -webkit-box-flex: 0;
+        max-width: 48%;
+    }
+
+    .flex.offset-xs3 {
+        margin-left: 25%;
+    }
+
+}
+
+/* Order summary css */
+
+.order-summary {
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+.order-summary-title-total {
+    float: right;
+}
+
+.order-summary-content {
+    margin-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,.12);
+}
+
+.order-summary-content .order-summary-header {
+    margin: 1rem 0 2rem;
+}
+
+.line-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.responsive {
+    position: relative;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    max-width: 100%;
+    display: -webkit-box;
+    display: flex;
+}
+
+.image {
+    z-index: 0;
+}
+
+.responsive__sizer {
+    -webkit-box-flex: 0;
+    flex: 0 0 0;
+}
+
+.image__image {
+    background-repeat: no-repeat;
+}
+
+.image__image--cover {
+    background-size: cover;
+}
+
+.demo__image {
+    width: 75px;
+    height: 75px;
+    background-image: url(https://findapharmacy.s3.eu-central-1.amazonaws.com/IBU_400mg.png);
+    background-position: center center;
+    background-size: cover;
+}
+
+.responsive__content {
+    -webkit-box-flex: 1;
+    flex: 1 0 0;
+    max-width: 100%;
+}
+
+.name {
+    font-weight: bolder;
+}
+
+.line-item .amount, .subtotals .amount {
+    text-align: right;
+}
+
+
+.subtotal {
+    border-top: 1px solid rgba(0,0,0,.12);
+}
+
+.total {
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+
+
+@media (min-width: 960px) {
+    .flex.order-md2 {
+        -webkit-box-ordinal-group: 3;
+        order: 2;
+    }
+
+    .flex.md5 {
+        flex-basis: 41.6666666667%;
+        -webkit-box-flex: 0;
+        flex-grow: 0;
+        max-width: 41.6666666667%;
+    }
+
+    .flex.md7 {
+        flex-basis: 58.3333333333%;
+        -webkit-box-flex: 0;
+        flex-grow: 0;
+        max-width: 58.3333333333%;
+    }
+
+}
