@@ -24,8 +24,6 @@ async function initStripe() {
 			return data.key;
 		});
 
-	console.log(key);
-
 	const stripe = Stripe(key);
 
 	const options = {
@@ -43,7 +41,7 @@ async function initStripe() {
 		const {error} = await stripe.confirmPayment({
 			elements,
 			confirmParams: {
-				return_url: 'http://localhost:8080/success',
+				return_url: 'http://finda-checkout.xaviete.com/success',
 			},
 		});
 
