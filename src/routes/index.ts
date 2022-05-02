@@ -1,5 +1,5 @@
 import express from 'express';
-import { checkout, success } from "../controller/checkout";
+import { checkout, success, getStripeKey } from "../controller/checkout";
 
 const router = express.Router();
 
@@ -7,5 +7,7 @@ const router = express.Router();
 router.get('/', checkout);
 
 router.get('/success', success);
+
+router.get('/get-publish', getStripeKey)
 
 export default router;

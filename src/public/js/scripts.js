@@ -11,13 +11,22 @@ window.onload = function () {
 
 };
 
-function initStripe() {
+async function initStripe() {
 
 	const form = document.querySelector('#payment-form');
 
 	const payment_intent_secret = form.dataset.secret;
 
-	const stripe = Stripe('pk_test_51KrKcCElQJSth86cIMQY7cDIHoHpdQh59y0Y5SDH3t6kcpyvixcnYXYTjFBu1wSwskxhjOLGnX1BO3ltM0zZXzb200d6DAdqwl');
+
+	const key = await fetch('/get-publish')
+		.then(response => response.json())
+		.then((data) => {
+			return data.key;
+		});
+
+	console.log(key);
+
+	const stripe = Stripe(key);
 
 	const options = {
 		clientSecret: payment_intent_secret
