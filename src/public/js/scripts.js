@@ -28,7 +28,7 @@ async function initStripe() {
 		clientSecret: payment_intent_secret
 	};
 
-	const elements = stripe.elements();
+	const elements = stripe.elements(options);
 
 	const paymentElement = elements.create('payment');
 	paymentElement.mount('#payment-element');
