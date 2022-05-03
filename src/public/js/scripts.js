@@ -28,19 +28,16 @@ async function initStripe() {
 		clientSecret: payment_intent_secret
 	};
 
-	const elements = stripe.elements(options);
+	const elementsStripe = stripe.elements(options);
 
-	const paymentElement = elements.create('card');
+	const paymentElement = elementsStripe.create('payment');
 	paymentElement.mount('#payment-element');
 
 	form.addEventListener('submit', async (event) => {
 		event.preventDefault();
 
 		const {error} = await stripe.confirmPayment({
-			elements,
-			confirmParams: {
-				return_url: 'https://finda-checkout.xaviete.com/success',
-			},
+			elementsStripe
 		});
 
 		if (error) {
