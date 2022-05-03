@@ -59,7 +59,7 @@ function toStep2() {
 	}
 
 	if (!step3.classList.contains('d-none')) {
-		step1.classList.add('d-none');
+		step3.classList.add('d-none');
 	}
 
 }
