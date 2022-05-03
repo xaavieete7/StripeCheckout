@@ -5,9 +5,8 @@ window.onload = function () {
 
 	if (form) {
 		initStripe();
+		addEventListener();
 	}
-
-	addEventListener();
 
 };
 
@@ -16,7 +15,6 @@ async function initStripe() {
 	const form = document.querySelector('#payment-form');
 
 	const payment_intent_secret = form.dataset.secret;
-
 
 	const key = await fetch('/get-publish')
 		.then(response => response.json())
