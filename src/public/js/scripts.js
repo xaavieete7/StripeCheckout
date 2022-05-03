@@ -28,26 +28,9 @@ async function initStripe() {
 		clientSecret: payment_intent_secret
 	};
 
-	const elements = stripe.elements();
+	const elements = stripe.elements(options);
 
-	const style = {
-		base: {
-			color: '#32325d',
-			lineHeight: '24px',
-			fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-			fontSmoothing: 'antialiased',
-			fontSize: '16px',
-			'::placeholder': {
-				color: '#aab7c4'
-			}
-		},
-		invalid: {
-			color: '#fa755a',
-			iconColor: '#fa755a'
-		}
-	};
-
-	const paymentElement = elements.create('card', { style: style});
+	const paymentElement = elements.create('payment');
 	paymentElement.mount('#payment-element');
 
 	form.addEventListener('submit', async (event) => {
@@ -56,7 +39,7 @@ async function initStripe() {
 		const {error} = await stripe.confirmPayment({
 			elements,
 			confirmParams: {
-				return_url: 'http://finda-checkout.xaviete.com/success',
+				return_url: 'https://finda-checkout.xaviete.com/success',
 			},
 		});
 
