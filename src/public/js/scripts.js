@@ -30,14 +30,17 @@ async function initStripe() {
 
 	const elementsStripe = stripe.elements(options);
 
-	const paymentElement = elementsStripe.create('card');
+	const paymentElement = elementsStripe.create('payment');
 	paymentElement.mount('#payment-element');
 
 	form.addEventListener('submit', async (event) => {
 		event.preventDefault();
 
 		const {error} = await stripe.confirmPayment({
-			elementsStripe
+			elementsStripe,
+			confirmParams: {
+				return_url: 'https://classroom.google.com',
+			}
 		});
 
 		if (error) {
