@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 import {config} from "../config/auth";
 
-const stripe = require('stripe')('sk_test_51KrKcCElQJSth86cyiPrYbwdvVSdeOWe9knYVVH2C5BlUPdgbGc9eq0YjYBSkVJDZdJyKlq4koJUsLeWhzSEBf60008ogdd1qq');
+const stripe = require('stripe')(config.CLIENT_SECRET);
 export async function checkout(req: Request, res: Response) {
 
     const paymentIntent = await stripe.paymentIntents.create({
@@ -16,8 +16,4 @@ export async function checkout(req: Request, res: Response) {
 
 export function success(req: Request, res: Response) {
     res.render('success');
-}
-
-export function getStripeKey(req: Request, res: Response) {
-    res.status(200).send({ key: config.CLIENT_PUBLIC })
 }
