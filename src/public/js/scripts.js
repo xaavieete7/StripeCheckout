@@ -30,7 +30,7 @@ async function initStripe() {
 
 	const elementsStripe = stripe.elements(options);
 
-	const paymentElement = elementsStripe.create('payment');
+	const paymentElement = elementsStripe.create('card');
 	paymentElement.mount('#payment-element');
 
 	form.addEventListener('submit', async (event) => {
