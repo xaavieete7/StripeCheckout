@@ -589,3 +589,17 @@ input.error {
     }
 
 }
+
+@media (max-width: 602px) {
+    .input-container .flex.width-input-30 {
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .stepper {
+        padding: 0;
+    }
+
+}
