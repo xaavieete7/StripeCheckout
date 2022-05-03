@@ -5,7 +5,7 @@ const stripe = require('stripe')(config.CLIENT_SECRET);
 export async function checkout(req: Request, res: Response) {
 
     const paymentIntent = await stripe.paymentIntents.create({
-        amount: 890,
+        amount: 8900,
         currency: 'eur',
         automatic_payment_methods: { enabled: true }
     });
