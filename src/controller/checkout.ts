@@ -1,11 +1,11 @@
 import {Request, Response} from "express";
 import {config} from "../config/auth";
 
-const stripe = require('stripe')(config.CLIENT_SECRET);
+const stripe = require('stripe')('sk_test_51KrKcCElQJSth86cyiPrYbwdvVSdeOWe9knYVVH2C5BlUPdgbGc9eq0YjYBSkVJDZdJyKlq4koJUsLeWhzSEBf60008ogdd1qq');
 export async function checkout(req: Request, res: Response) {
 
     const paymentIntent = await stripe.paymentIntents.create({
-        amount: 8900,
+        amount: 890,
         currency: 'eur',
         automatic_payment_methods: { enabled: true }
     });

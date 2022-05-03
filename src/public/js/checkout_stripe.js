@@ -1,61 +1,7 @@
+const formStripe = document.getElementById('payment-form');
 
-window.onload = function () {
-
-	const form = document.getElementById('payment-form');
-
-	if (form) {
-		initStripe();
-		addEventListener();
-	}
-
-};
-
-async function initStripe() {
-
-	const form = document.querySelector('#payment-form');
-
-	const payment_intent_secret = form.dataset.secret;
-
-	const key = await fetch('/get-publish')
-		.then(response => response.json())
-		.then((data) => {
-			return data.key;
-		});
-
-	const stripe = Stripe(key);
-
-	const options = {
-		clientSecret: payment_intent_secret
-	};
-
-	const elementsStripe = stripe.elements(options);
-
-	const paymentElement = elementsStripe.create('payment');
-	paymentElement.mount('#payment-element');
-
-	form.addEventListener('submit', async (event) => {
-		event.preventDefault();
-
-		const {error} = await stripe.confirmPayment({
-			elementsStripe,
-			confirmParams: {
-				return_url: 'https://classroom.google.com',
-			}
-		});
-
-		if (error) {
-
-			const messageContainer = document.querySelector('#error-message');
-
-			const errorElement = document.createElement('div');
-			errorElement.classList.add('stripe__error');
-			errorElement.append(error.message);
-
-			messageContainer.innerHTML = "";
-			messageContainer.append(errorElement);
-		}
-	});
-
+if (formStripe) {
+	addEventListener();
 }
 
 function addEventListener() {
