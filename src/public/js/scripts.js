@@ -28,9 +28,26 @@ async function initStripe() {
 		clientSecret: payment_intent_secret
 	};
 
-	const elements = stripe.elements(options);
+	const elements = stripe.elements();
 
-	const paymentElement = elements.create('payment');
+	const style = {
+		base: {
+			color: '#32325d',
+			lineHeight: '24px',
+			fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+			fontSmoothing: 'antialiased',
+			fontSize: '16px',
+			'::placeholder': {
+				color: '#aab7c4'
+			}
+		},
+		invalid: {
+			color: '#fa755a',
+			iconColor: '#fa755a'
+		}
+	};
+
+	const paymentElement = elements.create('card', { style: style});
 	paymentElement.mount('#payment-element');
 
 	form.addEventListener('submit', async (event) => {
