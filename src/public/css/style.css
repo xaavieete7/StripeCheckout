@@ -22,6 +22,30 @@ button, input, select, textarea {
     color: inherit;
 }
 
+.success-container {
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.success-container section {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+}
+
+.success-container p {
+    font-style: normal;
+    font-weight: 500;
+    color: #242d60;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 button, input, optgroup, select, textarea {
     font: inherit;
 }
