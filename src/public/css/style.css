@@ -46,6 +46,14 @@ button, input, select, textarea {
     justify-content: center;
 }
 
+.pb-15 {
+    padding-bottom: 15px;
+}
+
+.step-wrapper .padding-payment {
+    padding: 16px 51px 16px 0;
+}
+
 button, input, optgroup, select, textarea {
     font: inherit;
 }
@@ -322,7 +330,7 @@ input:focus {
 .input .label {
     height: 20px;
     line-height: 20px;
-    color: rgba(0,0,0,.54);
+    color: rgba(0,0,0);
     right: auto;
 }
 
@@ -339,6 +347,16 @@ input:focus {
     pointer-events: none;
 }
 
+input.input__error {
+    border: 1px solid red !important;
+}
+
+.input__error__message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+}
+
 .text-field input[type=text] {
     -webkit-box-flex: 1;
     flex: 1 1 auto;
@@ -348,10 +366,6 @@ input:focus {
     max-height: 32px;
     border: 1px solid rgba(0,0,0,0.24);
     border-radius: 5px;
-}
-
-input.error {
-    border-color: red;
 }
 
 /* Step 2 */

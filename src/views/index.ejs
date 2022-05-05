@@ -42,7 +42,8 @@
 
                                                                 <div class="text-field__slot">
                                                                     <label for="customer-email" class="label">Email</label>
-                                                                    <input type="text" id="customer-email" name="customer-email" class="input__required">
+                                                                    <input type="text" id="customer-email" name="customer-email" class="input__required" placeholder="elsa_klaus@gmail.com">
+                                                                    <span class="d-none input__error__message">Email is required</span>
 
                                                                     <div class="checkbox-container">
                                                                         <input type="checkbox" name="newsletter" id="newsletter-checkbox" value="true" checked="checked">
@@ -69,7 +70,8 @@
                                                                 <div class="text-field__slot">
 
                                                                     <label for="address-first-name" class="label">First name</label>
-                                                                    <input type="text" id="address-first-name" name="address-first-name" class="input__required">
+                                                                    <input type="text" id="address-first-name" name="address-first-name" class="input__required" placeholder="Elsa">
+                                                                    <span class="d-none input__error__message">First name is required</span>
 
                                                                 </div>
                                                             </div>
@@ -88,7 +90,8 @@
                                                                 <div class="text-field__slot">
 
                                                                     <label for="address-last-name" class="label">Last name</label>
-                                                                    <input type="text" id="address-last-name" name="address-last-name" class="input__required">
+                                                                    <input type="text" id="address-last-name" name="address-last-name" class="input__required" placeholder="Kraus">
+                                                                    <span class="d-none input__error__message">Last name is required</span>
 
                                                                 </div>
                                                             </div>
@@ -107,7 +110,8 @@
                                                                 <div class="text-field__slot">
 
                                                                     <label for="address-line" class="label">Address</label>
-                                                                    <input type="text" id="address-line" name="address-line" class="input__required">
+                                                                    <input type="text" id="address-line" name="address-line" class="input__required" placeholder="Schönhauser Allee 39">
+                                                                    <span class="d-none input__error__message">Address is required</span>
 
                                                                 </div>
                                                             </div>
@@ -126,7 +130,8 @@
                                                                 <div class="text-field__slot">
 
                                                                     <label for="address-city" class="label">City</label>
-                                                                    <input type="text" id="address-city" name="address-city" class="input__required">
+                                                                    <input type="text" id="address-city" name="address-city" class="input__required" placeholder="Neuenburg">
+                                                                    <span class="d-none input__error__message">City is required</span>
 
                                                                 </div>
                                                             </div>
@@ -145,8 +150,9 @@
 
                                                                 <div class="text-field__slot">
 
-                                                                    <label for="address-country-code" class="label">Country</label>
-                                                                    <input type="text" id="address-country-code" name="address-country-code" class="input__required">
+                                                                    <label for="address-country" class="label">Country</label>
+                                                                    <input type="text" id="address-country" name="address-country" class="input__required" placeholder="Germany">
+                                                                    <span class="d-none input__error__message">Country is required</span>
 
                                                                 </div>
                                                             </div>
@@ -165,7 +171,8 @@
                                                                 <div class="text-field__slot">
 
                                                                     <label for="address-province" class="label">Province</label>
-                                                                    <input type="text" id="address-province" name="address-province" class="input__required">
+                                                                    <input type="text" id="address-province" name="address-province" class="input__required" placeholder="Baden-Württemberg">
+                                                                    <span class="d-none input__error__message">Province is required</span>
 
                                                                 </div>
                                                             </div>
@@ -184,7 +191,8 @@
                                                                 <div class="text-field__slot">
 
                                                                     <label for="address-postal-code" class="label">Postal code</label>
-                                                                    <input type="text" id="address-postal-code" name="address-postal-code" class="input__required">
+                                                                    <input type="text" id="address-postal-code" name="address-postal-code" class="input__required" placeholder="79395">
+                                                                    <span class="d-none input__error__message">Postal code is required</span>
 
                                                                 </div>
                                                             </div>
@@ -203,7 +211,8 @@
                                                                 <div class="text-field__slot">
 
                                                                     <label for="address-phone" class="label">Phone</label>
-                                                                    <input type="text" id="address-phone" name="address-phone" class="input__required">
+                                                                    <input type="text" id="address-phone" name="address-phone" class="input__required" placeholder="07631 67 60 74">
+                                                                    <span class="d-none input__error__message">Phone is required</span>
 
                                                                 </div>
                                                             </div>
@@ -262,7 +271,6 @@
 
                                                             <div class="flex grow px-2 py-1">
                                                                 <div class="name">IBU-RATIOPHARM® 400 MG AKUT SCHMERZTABLETTEN</div>
-                                                                <div class="sku-code">TSHIRTMS000000</div>
                                                                 <div class="quanity">Quantity: 1</div>
                                                             </div>
                                                         </div>
@@ -300,11 +308,11 @@
                                     </div>
 
                                 </div>
-                                <div class="stepper__content d-none" id="step__3">
+                                <div class="stepper__content d-none padding-payment" id="step__3">
 
                                     <div class="stepper__wrapper">
 
-                                        <div class="container">
+                                        <div class="pb-15">
 
                                             <form id="payment-form" data-secret="<%= client_secret %>">
                                                 <div id="payment-element">
@@ -358,7 +366,6 @@
                                                 </div>
                                                 <div class="flex xs6">
                                                     <div class="name">IBU-RATIOPHARM® 400 MG AKUT SCHMERZTABLETTEN</div>
-                                                    <div class="sku-code">TSHIRTMS000000</div>
                                                     <div class="quanity">Quantity: 1</div>
                                                 </div>
                                                 <div class="flex xs3">
