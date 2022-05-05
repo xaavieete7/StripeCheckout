@@ -46,8 +46,8 @@ button, input, select, textarea {
     justify-content: center;
 }
 
-.pb-15 {
-    padding-bottom: 15px;
+.p-5 {
+    padding: 5px;
 }
 
 .step-wrapper .padding-payment {
